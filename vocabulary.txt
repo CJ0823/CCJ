@@ -1,0 +1,10 @@
+고양이: cat
+사과: apple
+교회: church
+절: temple
+지갑: wallet
+책가방: bag
+비누: soap
+자전거: bicycle
+책: book
+전기: electricity
