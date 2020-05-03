@@ -1,26 +1,16 @@
 def binary_search(element, some_list):
-    # 코드를 작성하세요.
-    some_list.sort()
-    index = len(some_list) // 2
-    index_half = len(some_list) // 2
-    while True:
-
-        if some_list[index_half] < element:
-            some_list = some_list[index_half:len(some_list)]
-            index_half = len(some_list) // 2
-            index += index_half
-            if index == 0 and some_list[index_half] == element:
-                return index
-            elif inde:
-                return None
-        elif some_list[index_half] > element:
-            some_list = some_list[:index_half]
-            index_half = len(some_list) // 2
-            index -= index_half
-            if some_list[index_half] == element:
-                return index
-            else:
-                return None
+    start_index = 0
+    end_index = len(some_list) - 1
+    
+    while start_index <= end_index:
+        midpoint = (start_index + end_index) // 2
+        if some_list[midpoint] == element:
+            return midpoint
+        elif some_list[midpoint] > element:
+            end_index = midpoint - 1
+        else:
+            start_index = midpoint + 1
+    return None
 
 print(binary_search(2, [2, 3, 5, 7, 11]))
 print(binary_search(0, [2, 3, 5, 7, 11]))
